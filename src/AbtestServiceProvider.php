@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
-class abtestServiceProvider extends ServiceProvider
+class AbtestServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

@@ -10,7 +10,7 @@ use Apurbajnu\abtest\Models\Goal;
 use Illuminate\Support\Collection;
 use Jaybizzle\CrawlerDetect\CrawlerDetect;
 
-class abtest
+class Abtest
 {
     protected $experiments;
 

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Apurbajnu\abtest\abtest
  */
-class abtestFacade extends Facade
+class AbtestFacade extends Facade
 {
     /**
      * Get the registered name of the component.
