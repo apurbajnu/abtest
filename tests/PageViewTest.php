@@ -1,10 +1,10 @@
 <?php
 
-namespace apurbajnu\AbTesting\Tests;
+namespace Apurbajnu\AbTesting\Tests;
 
-use apurbajnu\AbTesting\AbTesting;
-use apurbajnu\AbTesting\AbTestingFacade;
-use apurbajnu\AbTesting\Events\ExperimentNewVisitor;
+use Apurbajnu\AbTesting\AbTesting;
+use Apurbajnu\AbTesting\AbTestingFacade;
+use Apurbajnu\AbTesting\Events\ExperimentNewVisitor;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Event;
 

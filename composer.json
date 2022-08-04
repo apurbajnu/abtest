@@ -40,10 +40,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "apurbajnu\\AbTesting\\AbTestingServiceProvider"
+                "Apurbajnu\\AbTesting\\AbTestingServiceProvider"
             ],
             "aliases": {
-                "AbTesting": "apurbajnu\\AbTesting\\AbTestingFacade"
+                "AbTesting": "Apurbajnu\\AbTesting\\AbTestingFacade"
             }
         }
     }

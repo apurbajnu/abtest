@@ -1,8 +1,8 @@
 <?php
 
-namespace apurbajnu\AbTesting\Commands;
+namespace Apurbajnu\AbTesting\Commands;
 
-use apurbajnu\AbTesting\Models\Experiment;
+use Apurbajnu\AbTesting\Models\Experiment;
 use Illuminate\Console\Command;
 
 class ReportCommand extends Command

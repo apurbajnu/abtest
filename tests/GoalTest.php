@@ -1,10 +1,10 @@
 <?php
 
-namespace apurbajnu\AbTesting\Tests;
+namespace Apurbajnu\AbTesting\Tests;
 
-use apurbajnu\AbTesting\AbTesting;
-use apurbajnu\AbTesting\AbTestingFacade;
-use apurbajnu\AbTesting\Events\GoalCompleted;
+use Apurbajnu\AbTesting\AbTesting;
+use Apurbajnu\AbTesting\AbTestingFacade;
+use Apurbajnu\AbTesting\Events\GoalCompleted;
 use Illuminate\Support\Facades\Event;
 
 class GoalTest extends TestCase

@@ -1,9 +1,9 @@
 <?php
 
-namespace apurbajnu\AbTesting\Commands;
+namespace Apurbajnu\AbTesting\Commands;
 
-use apurbajnu\AbTesting\Models\Experiment;
-use apurbajnu\AbTesting\Models\Goal;
+use Apurbajnu\AbTesting\Models\Experiment;
+use Apurbajnu\AbTesting\Models\Goal;
 use Illuminate\Console\Command;
 
 class ResetCommand extends Command
