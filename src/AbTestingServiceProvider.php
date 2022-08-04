@@ -1,14 +1,14 @@
 <?php
 
-namespace Apurbajnu\Abtest;
+namespace Apurbajnu\abtest;
 
-use Apurbajnu\Abtest\Commands\ReportCommand;
-use Apurbajnu\Abtest\Commands\ResetCommand;
+use Apurbajnu\abtest\Commands\ReportCommand;
+use Apurbajnu\abtest\Commands\ResetCommand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
-class AbtestServiceProvider extends ServiceProvider
+class abtestServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -29,11 +29,11 @@ class AbtestServiceProvider extends ServiceProvider
         }
 
         Request::macro('abExperiment', function () {
-            return app(Abtest::class)->getExperiment();
+            return app(abtest::class)->getExperiment();
         });
 
         Blade::if('ab', function ($experiment) {
-            return app(Abtest::class)->isExperiment($experiment);
+            return app(abtest::class)->isExperiment($experiment);
         });
     }
 
@@ -47,7 +47,7 @@ class AbtestServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton('ab-testing', function () {
-            return new Abtest;
+            return new abtest;
         });
     }
 }

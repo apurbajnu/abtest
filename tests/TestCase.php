@@ -1,9 +1,9 @@
 <?php
 
-namespace Apurbajnu\Abtest\Tests;
+namespace Apurbajnu\abtest\Tests;
 
-use Apurbajnu\Abtest\AbtestFacade;
-use Apurbajnu\Abtest\AbtestServiceProvider;
+use Apurbajnu\abtest\abtestFacade;
+use Apurbajnu\abtest\abtestServiceProvider;
 use Illuminate\Support\Facades\Event;
 
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -42,12 +42,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
     protected function getPackageProviders($app)
     {
-        return [AbtestServiceProvider::class];
+        return [abtestServiceProvider::class];
     }
 
     protected function newVisitor()
     {
         session()->flush();
-        AbtestFacade::pageView();
+        abtestFacade::pageView();
     }
 }
