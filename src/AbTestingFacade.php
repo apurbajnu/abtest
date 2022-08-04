@@ -1,11 +1,11 @@
 <?php
 
-namespace Ben182\AbTesting;
+namespace apurbajnu\AbTesting;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Ben182\AbTesting\AbTesting
+ * @see \apurbajnu\AbTesting\AbTesting
  */
 class AbTestingFacade extends Facade
 {

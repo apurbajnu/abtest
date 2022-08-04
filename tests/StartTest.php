@@ -1,11 +1,11 @@
 <?php
 
-namespace Ben182\AbTesting\Tests;
+namespace apurbajnu\AbTesting\Tests;
 
-use Ben182\AbTesting\AbTestingFacade;
-use Ben182\AbTesting\Exceptions\InvalidConfiguration;
-use Ben182\AbTesting\Models\Experiment;
-use Ben182\AbTesting\Models\Goal;
+use apurbajnu\AbTesting\AbTestingFacade;
+use apurbajnu\AbTesting\Exceptions\InvalidConfiguration;
+use apurbajnu\AbTesting\Models\Experiment;
+use apurbajnu\AbTesting\Models\Goal;
 
 class StartTest extends TestCase
 {

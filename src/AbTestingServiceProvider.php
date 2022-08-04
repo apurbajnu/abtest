@@ -1,9 +1,9 @@
 <?php
 
-namespace Ben182\AbTesting;
+namespace apurbajnu\AbTesting;
 
-use Ben182\AbTesting\Commands\ReportCommand;
-use Ben182\AbTesting\Commands\ResetCommand;
+use apurbajnu\AbTesting\Commands\ReportCommand;
+use apurbajnu\AbTesting\Commands\ResetCommand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;

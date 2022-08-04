@@ -1,9 +1,9 @@
 <?php
 
-namespace Ben182\AbTesting\Tests;
+namespace apurbajnu\AbTesting\Tests;
 
-use Ben182\AbTesting\AbTestingFacade;
-use Ben182\AbTesting\AbTestingServiceProvider;
+use apurbajnu\AbTesting\AbTestingFacade;
+use apurbajnu\AbTesting\AbTestingServiceProvider;
 use Illuminate\Support\Facades\Event;
 
 class TestCase extends \Orchestra\Testbench\TestCase

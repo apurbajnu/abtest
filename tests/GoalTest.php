@@ -1,10 +1,10 @@
 <?php
 
-namespace Ben182\AbTesting\Tests;
+namespace apurbajnu\AbTesting\Tests;
 
-use Ben182\AbTesting\AbTesting;
-use Ben182\AbTesting\AbTestingFacade;
-use Ben182\AbTesting\Events\GoalCompleted;
+use apurbajnu\AbTesting\AbTesting;
+use apurbajnu\AbTesting\AbTestingFacade;
+use apurbajnu\AbTesting\Events\GoalCompleted;
 use Illuminate\Support\Facades\Event;
 
 class GoalTest extends TestCase
