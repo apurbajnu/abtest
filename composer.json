@@ -14,10 +14,24 @@
             "email": "apurba.jnu@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "apurbajnu/abtest", 
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/apurbajnu/abtest.git", 
+                    "type": "git",
+                    "reference": "master" 
+                }
+            }
+        }],
     "require": {
         "php": "^7.4 || ^8.0",
         "laravel/framework": "^5.3 || ^6.0 || ^7.0 || ^8.0 || ^9.0",
-        "jaybizzle/crawler-detect": "^1.2"
+        "jaybizzle/crawler-detect": "^1.2",
+        "apurbajnu/abtest": "1.0"
     },
     "require-dev": {
         "orchestra/testbench": "3.9.*",
