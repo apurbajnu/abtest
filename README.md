@@ -18,7 +18,7 @@ This package compatiable with Laravel 8.
 You can install the package via composer:
 
 ```bash
-composer require apurbajnu/laravel-ab
+composer require apurbajnu/abtest
 ```
 
 ## Config
