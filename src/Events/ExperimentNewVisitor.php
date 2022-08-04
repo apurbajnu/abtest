@@ -1,6 +1,6 @@
 <?php
 
-namespace Apurbajnu\AbTesting\Events;
+namespace Apurbajnu\Abtest\Events;
 
 class ExperimentNewVisitor
 {

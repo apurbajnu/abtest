@@ -1,11 +1,11 @@
 <?php
 
-namespace Apurbajnu\AbTesting\Tests;
+namespace Apurbajnu\Abtest\Tests;
 
-use Apurbajnu\AbTesting\AbTestingFacade;
-use Apurbajnu\AbTesting\Commands\ReportCommand;
-use Apurbajnu\AbTesting\Models\Experiment;
-use Apurbajnu\AbTesting\Models\Goal;
+use Apurbajnu\Abtest\AbtestFacade;
+use Apurbajnu\Abtest\Commands\ReportCommand;
+use Apurbajnu\Abtest\Models\Experiment;
+use Apurbajnu\Abtest\Models\Goal;
 
 class CommandTest extends TestCase
 {
@@ -14,7 +14,7 @@ class CommandTest extends TestCase
         $this->assertCount(0, Experiment::all());
         $this->assertCount(0, Goal::all());
 
-        AbTestingFacade::pageView();
+        AbtestFacade::pageView();
 
         $this->assertCount(2, Experiment::all());
         $this->assertCount(4, Goal::all());
@@ -42,7 +42,7 @@ class CommandTest extends TestCase
 
         $this->assertEquals([], $reportCommand->prepareBody()->toArray());
 
-        AbTestingFacade::pageView();
+        AbtestFacade::pageView();
 
         $expected = [
             [
@@ -78,7 +78,7 @@ class CommandTest extends TestCase
         ];
         $this->assertEquals($expected, $reportCommand->prepareBody()->toArray());
 
-        AbTestingFacade::completeGoal('firstGoal');
+        AbtestFacade::completeGoal('firstGoal');
 
         $expected = [
             [

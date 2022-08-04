@@ -1,13 +1,13 @@
 <?php
 
-namespace Apurbajnu\AbTesting;
+namespace Apurbajnu\Abtest;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Apurbajnu\AbTesting\AbTesting
+ * @see \Apurbajnu\Abtest\Abtest
  */
-class AbTestingFacade extends Facade
+class AbtestFacade extends Facade
 {
     /**
      * Get the registered name of the component.

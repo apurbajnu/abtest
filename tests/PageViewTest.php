@@ -1,10 +1,10 @@
 <?php
 
-namespace Apurbajnu\AbTesting\Tests;
+namespace Apurbajnu\Abtest\Tests;
 
-use Apurbajnu\AbTesting\AbTesting;
-use Apurbajnu\AbTesting\AbTestingFacade;
-use Apurbajnu\AbTesting\Events\ExperimentNewVisitor;
+use Apurbajnu\Abtest\Abtest;
+use Apurbajnu\Abtest\AbtestFacade;
+use Apurbajnu\Abtest\Events\ExperimentNewVisitor;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Event;
 
@@ -12,9 +12,9 @@ class PageViewTest extends TestCase
 {
     public function test_that_pageview_works()
     {
-        AbTestingFacade::pageView();
+        AbtestFacade::pageView();
 
-        $experiment = session(AbTesting::SESSION_KEY_EXPERIMENT);
+        $experiment = session(Abtest::SESSION_KEY_EXPERIMENT);
 
         $this->assertEquals($this->experiments[0], $experiment->name);
         $this->assertEquals(1, $experiment->visitors);
@@ -30,11 +30,11 @@ class PageViewTest extends TestCase
 
         session()->flush();
 
-        $this->assertNull(session(AbTesting::SESSION_KEY_EXPERIMENT));
+        $this->assertNull(session(Abtest::SESSION_KEY_EXPERIMENT));
 
-        AbTestingFacade::pageView();
+        AbtestFacade::pageView();
 
-        $experiment = session(AbTesting::SESSION_KEY_EXPERIMENT);
+        $experiment = session(Abtest::SESSION_KEY_EXPERIMENT);
 
         $this->assertEquals($this->experiments[1], $experiment->name);
         $this->assertEquals(1, $experiment->visitors);
@@ -45,38 +45,38 @@ class PageViewTest extends TestCase
         $_SERVER['HTTP_USER_AGENT'] = 'crawl';
         config()->set('ab-testing.ignore_crawlers', true);
 
-        AbTestingFacade::pageView();
+        AbtestFacade::pageView();
 
-        $this->assertNull(session(AbTesting::SESSION_KEY_EXPERIMENT));
+        $this->assertNull(session(Abtest::SESSION_KEY_EXPERIMENT));
 
         Event::assertNotDispatched(ExperimentNewVisitor::class);
     }
 
     public function test_is_experiment()
     {
-        AbTestingFacade::pageView();
+        AbtestFacade::pageView();
 
-        $this->assertTrue(AbTestingFacade::isExperiment('firstExperiment'));
-        $this->assertFalse(AbTestingFacade::isExperiment('secondExperiment'));
+        $this->assertTrue(AbtestFacade::isExperiment('firstExperiment'));
+        $this->assertFalse(AbtestFacade::isExperiment('secondExperiment'));
 
-        $this->assertEquals('firstExperiment', AbTestingFacade::getExperiment()->name);
+        $this->assertEquals('firstExperiment', AbtestFacade::getExperiment()->name);
     }
 
     public function test_that_two_pageviews_do_not_count_as_two_visitors()
     {
-        AbTestingFacade::pageView();
-        AbTestingFacade::pageView();
+        AbtestFacade::pageView();
+        AbtestFacade::pageView();
 
-        $experiment = session(AbTesting::SESSION_KEY_EXPERIMENT);
+        $experiment = session(Abtest::SESSION_KEY_EXPERIMENT);
 
         $this->assertEquals(1, $experiment->visitors);
     }
 
     public function test_that_isExperiment_triggers_pageview()
     {
-        AbTestingFacade::isExperiment('firstExperiment');
+        AbtestFacade::isExperiment('firstExperiment');
 
-        $experiment = session(AbTesting::SESSION_KEY_EXPERIMENT);
+        $experiment = session(Abtest::SESSION_KEY_EXPERIMENT);
 
         $this->assertEquals($this->experiments[0], $experiment->name);
         $this->assertEquals(1, $experiment->visitors);
@@ -86,7 +86,7 @@ class PageViewTest extends TestCase
     {
         $this->newVisitor();
 
-        $experiment = session(AbTesting::SESSION_KEY_EXPERIMENT);
+        $experiment = session(Abtest::SESSION_KEY_EXPERIMENT);
 
         $this->assertEquals($experiment, request()->abExperiment());
     }
@@ -105,6 +105,6 @@ class PageViewTest extends TestCase
         ]);
         $_SERVER['HTTP_USER_AGENT'] = 'Googlebot';
 
-        $this->assertFalse(AbTestingFacade::isExperiment('firstExperiment'));
+        $this->assertFalse(AbtestFacade::isExperiment('firstExperiment'));
     }
 }

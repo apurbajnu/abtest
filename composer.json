@@ -27,7 +27,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "apurbajnu\\AbTesting\\Tests\\": "tests"
+            "apurbajnu\\Abtest\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -40,10 +40,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Apurbajnu\\AbTesting\\AbTestingServiceProvider"
+                "Apurbajnu\\Abtest\\AbtestServiceProvider"
             ],
             "aliases": {
-                "AbTesting": "Apurbajnu\\AbTesting\\AbTestingFacade"
+                "Abtest": "Apurbajnu\\Abtest\\AbtestFacade"
             }
         }
     }
