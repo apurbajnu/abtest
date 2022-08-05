@@ -16,6 +16,6 @@ class AbtestFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'ab-testing';
+        return 'abtest';
     }
 }

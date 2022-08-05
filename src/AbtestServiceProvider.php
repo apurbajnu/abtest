@@ -43,10 +43,10 @@ class AbtestServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'ab-testing');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'abtest');
 
         // Register the main class to use with the facade
-        $this->app->singleton('ab-testing', function () {
+        $this->app->singleton('abtest', function () {
             return new abtest;
         });
     }

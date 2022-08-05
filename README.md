@@ -44,15 +44,15 @@ Two new migrations should be added.
 ### Experiments
 
 ```html
-@if (AbTesting::isExperiment('logo-big'))
+@if (Abtest::isExperiment('logo-big'))
 
 <div class="logo-big"></div>
 
-@elseif (AbTesting::isExperiment('logo-grayscale'))
+@elseif (Abtest::isExperiment('logo-grayscale'))
 
 <div class="logo-greyscale"></div>
 
-@elseif (AbTesting::isExperiment('brand-name'))
+@elseif (Abtest::isExperiment('brand-name'))
 
 <h1>Brand name</h1>
 
@@ -84,7 +84,7 @@ This will work exactly the same way.
 If you don't want to make any continual rendering you can call
 
 ```php
-AbTesting::pageView()
+Abtest::pageView()
 ```
 
 directly and trigger a new page view with a random experiment. This function will also be called from `isExperiment`.
@@ -95,20 +95,20 @@ You can grab the current experiment with:
 
 ```php
 // get the underlying model
-AbTesting::getExperiment()
+Abtest::getExperiment()
 
 // get the experiment name
-AbTesting::getExperiment()->name
+Abtest::getExperiment()->name
 
 // get the visitor count
-AbTesting::getExperiment()->visitors
+Abtest::getExperiment()->visitors
 ```
 
 Alternatively there is a request helper for you:
 
 ```php
 public function index(Request $request) {
-    // the same as 'AbTesting::getExperiment()'
+    // the same as 'Abtest::getExperiment()'
     $request->abExperiment()
 }
 ```
@@ -118,7 +118,7 @@ public function index(Request $request) {
 To complete a goal simply call:
 
 ```php
-AbTesting::completeGoal('signup')
+Abtest::completeGoal('signup')
 ```
 
 The function will increment the conversion of the goal assigned to the active experiment. If there isn't an active experiment running for the session one will be created. You can only trigger a goal conversion once per session. This will be prevented with another session item. The function returns the underlying goal model.
@@ -126,7 +126,7 @@ The function will increment the conversion of the goal assigned to the active ex
 To get all completed goals for the current session:
 
 ```php
-AbTesting::getCompletedGoals()
+Abtest::getCompletedGoals()
 ```
 
 ### Bots and crawlers
