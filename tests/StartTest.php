@@ -1,17 +1,17 @@
 <?php
 
-namespace Apurbajnu\abtest\Tests;
+namespace Apurbajnu\Abtest\Tests;
 
-use Apurbajnu\abtest\abtestFacade;
-use Apurbajnu\abtest\Exceptions\InvalidConfiguration;
-use Apurbajnu\abtest\Models\Experiment;
-use Apurbajnu\abtest\Models\Goal;
+use Apurbajnu\Abtest\AbtestFacade;
+use Apurbajnu\Abtest\Exceptions\InvalidConfiguration;
+use Apurbajnu\Abtest\Models\Experiment;
+use Apurbajnu\Abtest\Models\Goal;
 
 class StartTest extends TestCase
 {
     public function test_that_start_function_works()
     {
-        abtestFacade::pageView();
+        AbtestFacade::pageView();
 
         $this->assertCount(count($this->experiments), Experiment::all());
         $this->assertCount(count($this->goals) * count($this->experiments), Goal::all());
@@ -38,7 +38,7 @@ class StartTest extends TestCase
 
         $this->expectException(InvalidConfiguration::class);
 
-        abtestFacade::pageView();
+        AbtestFacade::pageView();
     }
 
     public function test_exception_if_duplicate_goal_names()
@@ -52,7 +52,7 @@ class StartTest extends TestCase
 
         $this->expectException(InvalidConfiguration::class);
 
-        abtestFacade::pageView();
+        AbtestFacade::pageView();
     }
 
     public function test_exception_if_no_experiments_set()
@@ -63,6 +63,6 @@ class StartTest extends TestCase
 
         $this->expectException(InvalidConfiguration::class);
 
-        abtestFacade::pageView();
+        AbtestFacade::pageView();
     }
 }

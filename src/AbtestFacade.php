@@ -1,11 +1,11 @@
 <?php
 
-namespace Apurbajnu\abtest;
+namespace Apurbajnu\Abtest;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Apurbajnu\abtest\abtest
+ * @see \Apurbajnu\Abtest\Abtest
  */
 class AbtestFacade extends Facade
 {
@@ -16,6 +16,6 @@ class AbtestFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'abtest';
+        return 'Abtest';
     }
 }

@@ -1,12 +1,12 @@
 <?php
 
-namespace Apurbajnu\abtest;
+namespace Apurbajnu\Abtest;
 
-use Apurbajnu\abtest\Events\ExperimentNewVisitor;
-use Apurbajnu\abtest\Events\GoalCompleted;
-use Apurbajnu\abtest\Exceptions\InvalidConfiguration;
-use Apurbajnu\abtest\Models\Experiment;
-use Apurbajnu\abtest\Models\Goal;
+use Apurbajnu\Abtest\Events\ExperimentNewVisitor;
+use Apurbajnu\Abtest\Events\GoalCompleted;
+use Apurbajnu\Abtest\Exceptions\InvalidConfiguration;
+use Apurbajnu\Abtest\Models\Experiment;
+use Apurbajnu\Abtest\Models\Goal;
 use Illuminate\Support\Collection;
 use Jaybizzle\CrawlerDetect\CrawlerDetect;
 
@@ -68,7 +68,7 @@ class Abtest
     /**
      * Triggers a new visitor. Picks a new experiment and saves it to the session.
      *
-     * @return \Apurbajnu\abtest\Models\Experiment|void
+     * @return \Apurbajnu\Abtest\Models\Experiment|void
      */
     public function pageView()
     {
@@ -106,7 +106,7 @@ class Abtest
     /**
      * Calculates a new experiment.
      *
-     * @return \Apurbajnu\abtest\Models\Experiment|null
+     * @return \Apurbajnu\Abtest\Models\Experiment|null
      */
     protected function getNextExperiment()
     {
@@ -136,7 +136,7 @@ class Abtest
      * Completes a goal by incrementing the hit property of the model and setting its ID in the session.
      *
      * @param  string  $goal  The goals name
-     * @return \Apurbajnu\abtest\Models\Goal|false
+     * @return \Apurbajnu\Abtest\Models\Goal|false
      */
     public function completeGoal(string $goal)
     {
@@ -167,7 +167,7 @@ class Abtest
     /**
      * Returns the currently active experiment.
      *
-     * @return \Apurbajnu\abtest\Models\Experiment|null
+     * @return \Apurbajnu\Abtest\Models\Experiment|null
      */
     public function getExperiment()
     {

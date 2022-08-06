@@ -1,6 +1,6 @@
 <?php
 
-namespace Apurbajnu\abtest\Events;
+namespace Apurbajnu\Abtest\Events;
 
 class GoalCompleted
 {

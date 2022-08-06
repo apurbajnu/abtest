@@ -11,7 +11,7 @@ return [
     | Example: ['big-logo', 'small-buttons']
     |
     */
-    'experiments' => [],
+    'experiments' => ['logo-big', 'logo-grayscale'],
     /*
     |--------------------------------------------------------------------------
     | Goals
